@@ -9,7 +9,7 @@ def main(lcd_5110,dht,uart6):
     lcd_5110.lcd_write_string('Temp:'+data_[0],2,2)
     lcd_5110.lcd_write_string(' ',0,3)
     lcd_5110.lcd_write_string(' Hum:'+data_[1],2,4)
-    uart6.write(str(data_[0])+','+data_[1])#通过串口将数据发送给v202
+    uart6.write(data_[0]+','+data_[1])#通过串口将数据发送给v202
 if __name__ == '__main__':
     #init UART
     u6=pyb.UART(6,115200)

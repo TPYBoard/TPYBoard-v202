@@ -1,8 +1,9 @@
 from machine import Timer
 import dht
 import machine
+
+d=dht.DHT11(machine.Pin(4))
 def f(t):
-    d=dht.DHT11(machine.Pin(4))
     d.measure()
     a=d.temperature()
     b=d.humidity()

@@ -19,7 +19,7 @@ def do_connect():
     p2 = Pin(2, Pin.OUT)
     sta_if.active(False)
     if not sta_if.isconnected():
-        p2.low()
+        p2.value(0)
         print('connecting to network...')
         sta_if.active(True)
         sta_if.connect('TurnipSmart', 'turnip2016')
@@ -27,7 +27,7 @@ def do_connect():
             pass
     if sta_if.isconnected():
         print('connect success')
-        p2.high()
+        p2.value(1)
         print('network config:', sta_if.ifconfig())
 
 def http_get(url):
